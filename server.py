@@ -18,6 +18,15 @@ def emotions_detector():
                 f" the dominant emotion is {dominant_emotion}")
 
     return message
+
+#error handles
+@app.errorhandler(404)
+def api_not_found():
+    return {"message": "API not found"}, 404
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    return {"message": str(e)}, 500
     
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
