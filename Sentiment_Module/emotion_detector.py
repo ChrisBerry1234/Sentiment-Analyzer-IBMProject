@@ -23,4 +23,5 @@ def emotion_detector(text_to_analyze):
             dominant_emotion = emotion
 
     #print({f'"Dominant emotion": {dominant_emotion}: {max}'})    
-    return dominant_emotion
+    #return dominant_emotion
+    return scores, dominant_emotion
