@@ -10,16 +10,17 @@ def emotion_detector(text_to_analyze):
     formatted_response = json.loads(response.text)
     scores = {}
     max = -1
-    Dominant_emotion = None
+    dominant_emotion = None
 
     for x in formatted_response['emotionPredictions']:
         for emotion, score in x['emotion'].items():
             scores[emotion] = score
-            print({f'"{emotion}": {score}'})
+            print({f"{emotion}": {score}})
 
     for emotion, score in scores.items():
         if score > max:
             max = score
-            Dominant_emotion = emotion
-    print({f'"Dominant emotion": {Dominant_emotion}: {max}'})    
-         
+            dominant_emotion = emotion
+
+    #print({f'"Dominant emotion": {dominant_emotion}: {max}'})    
+    return dominant_emotion
