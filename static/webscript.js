@@ -1,16 +1,16 @@
 const getresponsebtn = document.getElementById('send-response');
-const textToAnalyze = document.getElementById('user-text').value;
 
 getresponsebtn.addEventListener('click', () => {
-    
-    const xml = new XMLHttpRequest();
+    textToAnalyze = document.getElementById('user-text').value;
+
+    let xml = new XMLHttpRequest();
     xml.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
 
-            document.getElementById('results').innerHTML = xml.response.Text;
-            }
+            document.getElementById('results').innerHTML = xml.responseText;
+        }
     };
 
-    xml.open("GET", "emotionDetector?textToAnalyze"+"="+ `${textToAnalyze}`);
+    xml.open("GET", "emotionDetector?textToAnalyze"+"="+textToAnalyze, true);
     xml.send();
 });
