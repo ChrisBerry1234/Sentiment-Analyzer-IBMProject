@@ -6,8 +6,7 @@ getresponsebtn.addEventListener('click', () => {
     let xml = new XMLHttpRequest();
     xml.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200){
-
-            document.getElementById('results').innerHTML = xml.responseText;
+            document.getElementById('results').innerHTML = JSON.parse(xml.responseText);
         }
     };
 
