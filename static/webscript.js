@@ -5,8 +5,13 @@ getresponsebtn.addEventListener('click', () => {
 
     let xml = new XMLHttpRequest();
     xml.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200){
-            document.getElementById('results').innerHTML = JSON.parse(xml.responseText);
+        if (this.readyState == 4){
+            if (this.status == 200){
+                document.getElementById('results').innerHTML = xml.responseText;
+            }
+            if (this.status == 400){
+                document.getElementById('results').innerHTML = xml.responseText;
+            }
         }
     };
 

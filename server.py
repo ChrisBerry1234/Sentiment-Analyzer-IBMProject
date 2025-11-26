@@ -12,9 +12,9 @@ def emotions_detector():
     text_to_analyze = request.args.get('textToAnalyze')
 
     if text_to_analyze.strip() == "":
-        return {"error": "Please Enter Text"}, 400
+        return ("Please Enter Text"), 400
     if text_to_analyze.isdigit():
-        return {"error":"Please Only enter text"}, 400
+        return ("Please Only enter text"), 400
 
     emotion_scores, dominant_emotion = emotion_detector(text_to_analyze)
 
