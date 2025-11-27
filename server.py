@@ -18,12 +18,14 @@ def emotions_detector():
 
     emotion_scores, dominant_emotion = emotion_detector(text_to_analyze)
 
-    message = (
-                f"For the given statement: '{text_to_analyze}',"+
-                f" the system response is {emotion_scores},"+ 
-                f" the dominant emotion is {dominant_emotion}")
+    #create object to send 
+    message = {
+                "input": text_to_analyze,
+                "scores": emotion_scores,
+                "dominant_emotion": dominant_emotion
+            }
 
-    return message
+    return jsonify(message), 200
 
 #error handles
 @app.errorhandler(404)
