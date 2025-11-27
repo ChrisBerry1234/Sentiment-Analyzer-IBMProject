@@ -1,6 +1,17 @@
 const getresponsebtn = document.getElementById('send-response');
 
 getresponsebtn.addEventListener('click', () => {
+    sendHttpRequest();
+});
+
+addEventListener('keydown', (e) => {
+    if (e.code === "Enter"){
+        sendHttpRequest();
+    }
+} )
+   
+
+function sendHttpRequest() {
     textToAnalyze = document.getElementById('user-text').value;
 
     let xml = new XMLHttpRequest();
@@ -13,8 +24,9 @@ getresponsebtn.addEventListener('click', () => {
                 document.getElementById('results').innerHTML = xml.responseText;
             }
         }
-    };
+    }
 
     xml.open("GET", "emotionDetector?textToAnalyze"+"="+textToAnalyze, true);
     xml.send();
-});
+};
+
