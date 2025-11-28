@@ -48,3 +48,7 @@ header{
     background-color: white;
     font-weight: bold;
 }
+
+.results-container {
+    text-align: center;
+}

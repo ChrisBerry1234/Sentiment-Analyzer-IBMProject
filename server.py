@@ -14,7 +14,7 @@ def emotions_detector():
     if text_to_analyze.strip() == "":
         return ("Please Enter Text"), 400
     if text_to_analyze.isdigit():
-        return ("Please Only enter text"), 400
+        return ("Please only enter text"), 400
 
     emotion_scores, dominant_emotion = emotion_detector(text_to_analyze)
 
