@@ -1,11 +1,9 @@
-""" Emotion Detector Flask API """
-
 from flask import Flask, request, render_template, jsonify
 from Sentiment_Module.emotion_detector import emotion_detector
 
 app = Flask("My Emotion Detector")
 
-@app.route('/', method=['GET'])
+@app.route('/')
 def render_index_page():
     """ Render the HTML index page. """
     return render_template('index.html')
@@ -46,4 +44,3 @@ def handle_exception(e):
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
-    
