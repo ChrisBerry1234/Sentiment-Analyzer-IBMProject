@@ -9,8 +9,8 @@ It identifies five emotions:
 - Joy
 - Sadness
 
-
-⚠️ Important Note: IBM Cloud Environment Requirement
+**
+⚠️ Important Note: IBM Cloud Environment Requirement**
 
 This project must be run inside the IBM Skills Network Theia Docker environment, as required by the course.
 
@@ -23,7 +23,7 @@ Because of this restriction, the project cannot run locally on your machine or t
 
 
 
-📘 Background
+**📘 Background**
 
 This project was built as part of the IBM Software Engineering course during my IBM Externship, where the goal was to design, deploy, and integrate an NLP-powered backend service.
 
