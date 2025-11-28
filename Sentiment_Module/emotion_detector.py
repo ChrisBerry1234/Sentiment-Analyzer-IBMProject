@@ -9,8 +9,8 @@ import requests
 def emotion_detector(text_to_analyze):
     """ Sends a  request to the IBM Watson Emotion API and return 
     a dictionary of emotion scores and the dominant emotion string."""
-
-    url = 'https://sn-watson-emotion.labs.skills.network/v1/"watson.runtime.nlp.v1/NlpService/EmotionPredict'
+    
+    url = 'https://sn-watson-emotion.labs.skills.network/v1/watson.runtime.nlp.v1/NlpService/EmotionPredict'
     headers = {"grpc-metadata-mm-model-id": "emotion_aggregated-workflow_lang_en_stock"}
     myjson = {"raw_document": {"text": text_to_analyze }}
 
@@ -30,6 +30,5 @@ def emotion_detector(text_to_analyze):
             max = score
             dominant_emotion = emotion
 
-    #print({f'"Dominant emotion": {dominant_emotion}: {max}'})    
-    #return dominant_emotion
     return scores, dominant_emotion
+
