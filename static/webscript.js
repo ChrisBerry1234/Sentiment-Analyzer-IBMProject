@@ -18,6 +18,7 @@ function sendHttpRequest() {
     xml.onreadystatechange = function() {
         if (this.readyState == 4){
             if (this.status == 200){
+                
                 const respobj = JSON.parse(xml.responseText);
                 //scores is an object within an object so we need to extract it
                 const respobjscores = respobj.scores;
